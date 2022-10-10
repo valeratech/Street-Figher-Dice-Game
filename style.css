@@ -45,8 +45,27 @@ main {
     align-items: center;
     transition: all 0.75s;
 }
+.player--1 {
+    background-color: rgba(209, 38, 50, 0.7);
+}
 
+.player--2 {
+    background-color: rgba(59, 93, 187, 0.7);
+}
 
+.player--active {
+    background-color: rgba(209, 38, 50, 0.7);
+}
+.player--active .name {
+    font-weight: 800;
+}
+.player--active .score {
+    font-weight: 400;
+}
+
+.player--active .current {
+    opacity: 1;
+}
 
 .name {
     position: relative;
@@ -66,7 +85,7 @@ main {
 
 
 .current {
-    background-image: linear-gradient(135deg, #eb0015 30%, #ff981f, #fefd43, #fefedd);
+    background-image: linear-gradient(135deg, #ffbc1f, #fefd43 35%, #fefedd);
     width: 100%;);
     opacity: 0.8;
     border-radius: 9px;
@@ -90,7 +109,7 @@ main {
 
 .dice--1 {
     position: absolute;
-    left: 43%;
+    left: 45%;
     top: 165px;
     transform: translateX(-50%);
     height: 100px;
@@ -99,13 +118,53 @@ main {
 
 .dice--2 {
     position: absolute;
-    left: 57%;
+    left: 55%;
     top: 165px;
     transform: translateX(-50%);
     height: 100px;
     box-shadow:0 20px 50px rgba(0, 0, 0, 0.2);
 }
 
+.btn {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #201e1e;
+    background: none;
+    border: none;
+    font-family: inherit;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-weight: 400;
+    transition: all 0.2s;
+
+    background-image: linear-gradient(135deg, #ffbc1f, #fefd43 35%, #fefedd);
+    backdrop-filter: blur(10px);
+
+    padding: 0.7rem 2.5rem;
+    border-radius: 50rem;
+    box-shadow: 0 1.75rem 3.5rem rgba(0, 0, 0, 0.1);
+}
+
+.btn--new {
+    top: 4rem;
+}
+.btn--roll {
+    top: 39.3rem;
+}
+.btn--hold {
+    top: 46.1rem;
+}
+
+.btn:active {
+    transform: translate(-50%, 3px);
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
+}
+
+.btn:focus {
+    outline: none;
+}
 
 
 
