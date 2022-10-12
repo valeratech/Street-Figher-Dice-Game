@@ -19,7 +19,10 @@ const player = function (name, idNum) {
     };
 
     // return current score
-
+    const updateCurrent = function(diceTotal) {
+        currentScore += diceTotal
+        curContainer.textContent = currentScore;
+    }
 
     const getScore = function() {
         // code
@@ -35,6 +38,7 @@ const player = function (name, idNum) {
         const diceTotal = dice.reduce((a,b) => a + b, 0);
         diceOne.src = `dice-${dice[0]}.png`;
         diceTwo.src = `dice-${dice[1]}.png`;
+        updateCurrent(diceTotal);
     };
 
     // current points before added to the playerScore
