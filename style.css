@@ -54,13 +54,17 @@ main {
 }
 
 .player--active {
-    background-color: rgba(209, 38, 50, 0.7);
+    border: solid;
+    border-width: 10px;
+    border-color: #ced8ed;
 }
+
 .player--active .name {
-    font-weight: 800;
+    font-weight: bolder;
 }
+
 .player--active .score {
-    font-weight: 400;
+    font-weight: bolder;
 }
 
 .player--active .current {
