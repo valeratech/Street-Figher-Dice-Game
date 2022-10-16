@@ -71,6 +71,23 @@ main {
     opacity: 1;
 }
 
+/*Resize with the max-width property*/
+/*Using the max-width property allows the image to maintain its exact aspect ratio*/
+.ken {
+    height: auto;
+    max-width: 20%;
+    position: absolute;
+    left: 10px;
+}
+
+.akuma {
+    height: auto;
+    max-width: 25%;
+    position: absolute;
+    right: -90px;
+    top: 100px;
+}
+
 .health {
     width: 550px;
     height: 40px;
