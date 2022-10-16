@@ -1,2 +1,3 @@
-# The Pig-Game|Street Fighter Edition
-The Street Fighter themed Pig-Game using factory-functions and objects.
+# Street Fighter Dice Game
+The Street Fighter theme - Using Pig-Game rules. 
+Factory-functions and objects project.
