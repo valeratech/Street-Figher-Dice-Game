@@ -43,7 +43,7 @@ main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    transition: all 0.75s;
+    transition: all 0.35s;
 }
 .player--1 {
     background-color: rgba(209, 38, 50, 0.7);
@@ -53,11 +53,12 @@ main {
     background-color: rgba(59, 93, 187, 0.7);
 }
 
-/*.player--active {*/
-/*    border: solid;*/
-/*    border-width: 10px;*/
-/*    border-color: #ced8ed;*/
-/*}*/
+.player--active {
+    border: solid;
+    border-width: 2px;
+    border-color: #ced8ed;
+    border-radius: 9px;
+}
 
 .player--active .name {
     font-weight: bolder;
@@ -69,6 +70,9 @@ main {
 
 .player--active .current {
     opacity: 1;
+    border: solid;
+    border-width: 1px;
+    border-color: #ced8ed;
 }
 
 /*Resize with the max-width property*/
@@ -218,7 +222,7 @@ progress {
     text-transform: uppercase;
     cursor: pointer;
     font-weight: 400;
-    transition: all 0.2s;
+    /*transition: all 0.2s;*/
 
     background-image: linear-gradient(135deg, #ffbc1f, #fefd43 35%, #fefedd);
     backdrop-filter: blur(10px);
@@ -228,7 +232,7 @@ progress {
     box-shadow: 0 1.75rem 3.5rem rgba(0, 0, 0, 0.1);
 }
 
-.btn--new {
+.btn--menu {
     top: 53rem;
 }
 .btn--roll {
@@ -243,10 +247,46 @@ progress {
     box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.15);
 }
 
+.btn:hover {
+    color: #ced8ed;
+    border: solid 1px #ced8ed;
+}
+
 .btn:focus {
     outline: none;
 }
 
+/* Win Screen */
 
+.hidden {
+    display: none;
+}
 
+.win-screen {
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #f9f30e;
+    z-index: 20;
+}
 
+.win-main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 500px;
+    height: 500px;
+    background-color: #f9d60e;
+    border-radius: 50%;
+}
+
+.btn--win {
+    position: static;
+    align-self: end;
+    margin-bottom: 10px;
+}

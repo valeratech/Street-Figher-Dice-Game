@@ -98,6 +98,7 @@ const player = function (name, idNum) {
 const player1 = player('Ryan', 1);
 const player2 = player('Liz', 2);
 
+// Event listeners
 const btnRoll = document.querySelector('.btn--roll');
 const btnHold = document.querySelector('.btn--hold');
 
@@ -108,3 +109,10 @@ btnRoll.addEventListener('click', () => {
 btnHold.addEventListener('click', () => {
     activePlayer === 1 ? player1.holdScore() : player2.holdScore();
 });
+
+// Testing
+const windowThing = document.querySelector('.win-screen');
+document.querySelector('.btn--menu').addEventListener('click',() => {
+    windowThing.classList.toggle('hidden');
+    windowThing.style.display = 'flex';
+})
