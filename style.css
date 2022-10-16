@@ -39,7 +39,7 @@ main {
 
 .player {
     flex: 50%;
-    padding: 9rem;
+    padding: 15rem;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -53,11 +53,11 @@ main {
     background-color: rgba(59, 93, 187, 0.7);
 }
 
-.player--active {
-    border: solid;
-    border-width: 10px;
-    border-color: #ced8ed;
-}
+/*.player--active {*/
+/*    border: solid;*/
+/*    border-width: 10px;*/
+/*    border-color: #ced8ed;*/
+/*}*/
 
 .player--active .name {
     font-weight: bolder;
@@ -72,8 +72,24 @@ main {
 }
 
 .health {
-    width: 400px;
+    width: 550px;
     height: 40px;
+}
+
+h3 {
+    color: white;
+    text-shadow:
+        -3px -3px 1px #26346c,
+        3px -3px 1px #26346c,
+        -3px 3px 1px #26346c,
+        3px 3px 1px #26346c;
+    font-size: 7rem;
+    font-weight: 900;
+    position: absolute;
+    letter-spacing: -12px;
+    top: 24px;
+    left: 707px;
+    z-index: 10;
 }
 
 progress {
@@ -81,6 +97,12 @@ progress {
     border-style: solid;
     border-color: white;
     border-radius: 3px;
+    position: absolute;
+}
+
+.hlth-bar--1 {
+    top: 50px;
+    left: 170px;
 }
 
 .hlth-bar--1::-webkit-progress-bar {
@@ -95,7 +117,9 @@ progress {
     background-color: #fefb34;
 }
 
-.hlth-bar--1 {
+.hlth-bar--2 {
+    top: 50px;
+    right: 170px;
     transform: rotate(-180deg);
 }
 
