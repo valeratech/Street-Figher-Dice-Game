@@ -9,6 +9,7 @@ const player = function (name, idNum) {
     const diceTwo = document.querySelector('.dice--2')
     const currentContainer = document.querySelector(`#current--${idNum}`)
     const scoreContainer = document.querySelector(`#score--${idNum}`)
+    const healthBar = document.querySelector(`.hlth-bar--${idNum}`);
     const holdButton = document.querySelector('.btn--hold');
     const playerContainer1 = document.querySelector('.player--1');
     const playerContainer2 = document.querySelector('.player--2');
@@ -29,6 +30,11 @@ const player = function (name, idNum) {
     const resetCurrent = function() {
         currentContainer.textContent = 0;
         currentScore = 0;
+    }
+
+    // update health bar
+    const updateHealth = function() {
+
     }
 
     // checkScore to see if currentScore and playScore is greater than or equal to winning Score

@@ -76,6 +76,37 @@ main {
     height: 40px;
 }
 
+progress {
+    -webkit-appearance: none;
+    border-style: solid;
+    border-color: white;
+    border-radius: 3px;
+}
+
+.hlth-bar--1::-webkit-progress-bar {
+    background-color: #fb0017;
+}
+
+.hlth-bar--1::-webkit-progress-value {
+    background-color: #fefb34;
+}
+
+.hlth-bar--1::-webkit-progress-value {
+    background-color: #fefb34;
+}
+
+.hlth-bar--1 {
+    transform: rotate(-180deg);
+}
+
+.hlth-bar--2::-webkit-progress-bar {
+    background-color: #fb0017;
+}
+
+.hlth-bar--2::-webkit-progress-value {
+    background-color: #fefb34;
+}
+
 .name {
     position: relative;
     font-size: 4rem;
