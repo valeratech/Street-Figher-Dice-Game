@@ -71,6 +71,11 @@ main {
     opacity: 1;
 }
 
+.health {
+    width: 400px;
+    height: 40px;
+}
+
 .name {
     position: relative;
     font-size: 4rem;
@@ -152,7 +157,7 @@ main {
 }
 
 .btn--new {
-    top: 4rem;
+    top: 53rem;
 }
 .btn--roll {
     top: 39.3rem;
