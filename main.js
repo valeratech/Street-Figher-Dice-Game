@@ -9,7 +9,8 @@ const player = function (name, idNum) {
     const diceTwo = document.querySelector('.dice--2')
     const currentContainer = document.querySelector(`#current--${idNum}`)
     const scoreContainer = document.querySelector(`#score--${idNum}`)
-    const healthBar = document.querySelector(`.hlth-bar--${idNum}`);
+    const healthBar1 = document.querySelector('.hlth-bar--1');
+    const healthBar2 = document.querySelector('.hlth-bar--2');
     const holdButton = document.querySelector('.btn--hold');
     const playerContainer1 = document.querySelector('.player--1');
     const playerContainer2 = document.querySelector('.player--2');
@@ -32,9 +33,13 @@ const player = function (name, idNum) {
         currentScore = 0;
     }
 
-    // update health bar
+    // update opponents health bar upon hold-method
     const updateHealth = function() {
-
+        if (activePlayer === 1) {
+            healthBar2.value = winningScore - ((playerScore/winningScore) * 100);
+        } else {
+            healthBar1.value = winningScore - ((playerScore/winningScore) * 100);
+        }
     }
 
     // checkScore to see if currentScore and playScore is greater than or equal to winning Score
@@ -42,16 +47,17 @@ const player = function (name, idNum) {
         let totalScore = playerScore + currentScore;
         if (totalScore >= winningScore) {
             scoreContainer.textContent = totalScore;
+            holdScore();
             alert("KO")
             alert(`${name}`);
         }
-
     };
 
     // DISABLE THE BUTTON FOR PLAYER 1 PLAYER 2 ON HOLD
     const holdScore = function() {
         let totalScore = playerScore += currentScore;
         scoreContainer.textContent = totalScore;
+        updateHealth()
         resetCurrent();
         switchPlayer();
     };

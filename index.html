@@ -2,35 +2,35 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>The Pig-Game | Street Fighter Edition</title>
+    <title>Street Fighter - Dice Game</title>
     <link rel="stylesheet" href="style.css">
     <script src="main.js" defer></script>
 </head>
 <body>
 <main>
     <section class="player player--1 player--active">
-        <progress class="health hlth-bar--1" id="hlth--1" max="100" value="70"></progress>
-        <h2 class="name" id="name--1">Player 1</h2>
+        <progress class="health hlth-bar--1" id="hlth--1" max="100" value="100"></progress>
         <p class="score" id="score--1">0</p>
+        <h2 class="name" id="name--1">Damage Done</h2>
         <div class="current">
-            <p class="current-label">Current</p>
             <p class="current-score" id="current--1">0</p>
+            <p class="current-label">HIT COMBO</p>
         </div>
     </section>
     <section class="player player--2">
-        <progress class="health hlth-bar--2" id="hlth--2" max="100" value="70"></progress>
-        <h2 class="name" id="name--2">Player 2</h2>
+        <progress class="health hlth-bar--2" id="hlth--2" max="100" value="100"></progress>
         <p class="score" id="score--2">0</p>
+        <h2 class="name" id="name--2">Damage Done</h2>
         <div class="current">
-            <p class="current-label">Current</p>
             <p class="current-score" id="current--2">0</p>
+            <p class="current-label">HIT COMBO</p>
         </div>
     </section>
     <img src="dice-6.png" alt="Playing dice" class="dice--1" />
     <img src="dice-6.png" alt="Playing dice" class="dice--2" />
     <button class="btn btn--new">New game</button>
-    <button class="btn btn--roll">Roll dice</button>
-    <button class="btn btn--hold">Hold</button>
+    <button class="btn btn--roll">Attack</button>
+    <button class="btn btn--hold">Defend</button>
 </main>
 </body>
 </html>
