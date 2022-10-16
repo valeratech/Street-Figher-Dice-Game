@@ -14,11 +14,13 @@ const player = function (name, idNum) {
     const holdButton = document.querySelector('.btn--hold');
     const playerContainer1 = document.querySelector('.player--1');
     const playerContainer2 = document.querySelector('.player--2');
+    const winWindow = document.querySelector('.win-screen');
+    const winMain = document.querySelector('.win-main');
 
     // the sum of points pushed to the
     let playerScore = 0;
     let currentScore = 0;
-    let winningScore = 100;
+    let winningScore =  50;
     let dice = [];
 
     // return current score
@@ -47,9 +49,8 @@ const player = function (name, idNum) {
         let totalScore = playerScore + currentScore;
         if (totalScore >= winningScore) {
             scoreContainer.textContent = totalScore;
+            winScreen();
             holdScore();
-            alert("KO")
-            alert(`${name}`);
         }
     };
 
@@ -86,10 +87,16 @@ const player = function (name, idNum) {
         playerContainer2.classList.toggle('player--active');
     };
 
-    // current points before added to the playerScore
-    // const currentPoints = {
-    //     // code
-    // };
+    const winScreen = function() {
+        winWindow.classList.toggle('hidden');
+        winWindow.style.display = 'flex';
+        const playerIcon = document.createElement('img')
+        playerIcon.src = `player--${activePlayer}.png`
+        winMain.appendChild(playerIcon);
+        console.log(activePlayer)
+        // const createCaption1 = document.createElement()
+
+    };
 
     return {roll, holdScore};
 };
@@ -101,6 +108,8 @@ const player2 = player('Liz', 2);
 // Event listeners
 const btnRoll = document.querySelector('.btn--roll');
 const btnHold = document.querySelector('.btn--hold');
+const btnRematch = document.querySelector('.btn--roll');
+const btnRestart = document.querySelector('.btn--hold');
 
 btnRoll.addEventListener('click', () => {
     activePlayer === 1 ? player1.roll() : player2.roll();
@@ -110,9 +119,7 @@ btnHold.addEventListener('click', () => {
     activePlayer === 1 ? player1.holdScore() : player2.holdScore();
 });
 
+// const btnRestart =
+
 // Testing
-const windowThing = document.querySelector('.win-screen');
-document.querySelector('.btn--menu').addEventListener('click',() => {
-    windowThing.classList.toggle('hidden');
-    windowThing.style.display = 'flex';
-})
+document.querySelector('#restart').addEventListener('click', () => window.location.reload());

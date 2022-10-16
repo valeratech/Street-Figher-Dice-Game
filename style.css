@@ -14,7 +14,7 @@ body {
     font-family: 'Nunito', sans-serif;
     height: 100vh;
     color: #333;
-    background-image: url('ryu.jpg');
+    background-image: url('ryu-background.jpg');
     background-size: cover;
     background-color: #000000;   /*MUST BE USED WITH background-blend-mode*/
     background-blend-mode: screen;  /*MUST BE USED WITH background-color*/
@@ -77,19 +77,22 @@ main {
 
 /*Resize with the max-width property*/
 /*Using the max-width property allows the image to maintain its exact aspect ratio*/
+.ryu {
+    height: auto;
+    max-width: 18%;
+    position: absolute;
+    top: 136px;
+    left: 10px;
+    transform: rotateY(180deg);
+}
+
 .ken {
     height: auto;
     max-width: 20%;
     position: absolute;
-    left: 10px;
-}
-
-.akuma {
-    height: auto;
-    max-width: 25%;
-    position: absolute;
-    right: -90px;
-    top: 100px;
+    right: 10px;
+    top: 155px;
+    transform: rotateY(180deg);
 }
 
 .health {
@@ -111,6 +114,10 @@ h3 {
     top: 24px;
     left: 707px;
     z-index: 10;
+}
+
+h4, h5 {
+    font-size: 5rem;
 }
 
 progress {
