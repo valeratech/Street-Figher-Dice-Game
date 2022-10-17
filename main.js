@@ -20,7 +20,7 @@ const player = function (name, idNum) {
     // the sum of points pushed to the
     let playerScore = 0;
     let currentScore = 0;
-    let winningScore =  50;
+    let winningScore =  1;
     let dice = [];
 
     // return current score
@@ -90,8 +90,9 @@ const player = function (name, idNum) {
     const winScreen = function() {
         winWindow.classList.toggle('hidden');
         winWindow.style.display = 'flex';
-        const playerIcon = document.createElement('img')
-        playerIcon.src = `player--${activePlayer}.png`
+        const playerIcon = document.createElement('img');
+        playerIcon.src = `player--${activePlayer}.png`;
+        playerIcon.className = `win-icon--${activePlayer}`;
         winMain.appendChild(playerIcon);
         console.log(activePlayer)
         // const createCaption1 = document.createElement()
@@ -108,8 +109,8 @@ const player2 = player('Liz', 2);
 // Event listeners
 const btnRoll = document.querySelector('.btn--roll');
 const btnHold = document.querySelector('.btn--hold');
-const btnRematch = document.querySelector('.btn--roll');
-const btnRestart = document.querySelector('.btn--hold');
+const btnRematch = document.querySelector('.rematch');
+const btnRestart = document.querySelector('.restart');
 
 btnRoll.addEventListener('click', () => {
     activePlayer === 1 ? player1.roll() : player2.roll();
@@ -119,7 +120,39 @@ btnHold.addEventListener('click', () => {
     activePlayer === 1 ? player1.holdScore() : player2.holdScore();
 });
 
-// const btnRestart =
 
 // Testing
-document.querySelector('#restart').addEventListener('click', () => window.location.reload());
+document.querySelectorAll('.restart').forEach((button) => {
+    button.addEventListener('click', () => window.location.reload());
+});
+
+
+/* Modal */
+const modal = document.querySelector('.modal');
+const overlay = document.querySelector('.overlay');
+const btnCloseModal = document.querySelector('.close-modal');
+const btnsOpenModal = document.querySelectorAll('.btn--menu');
+
+const openModal = function () {
+    modal.classList.remove('hidden');
+    overlay.classList.remove('hidden');
+};
+
+const closeModal = function () {
+    modal.classList.add('hidden');
+    overlay.classList.add('hidden');
+};
+
+for (let i = 0; i < btnsOpenModal.length; i++)
+    btnsOpenModal[i].addEventListener('click', openModal);
+
+// btnCloseModal.addEventListener('click', closeModal);
+overlay.addEventListener('click', closeModal);
+
+document.addEventListener('keydown', function (e) {
+    // console.log(e.key);
+
+    if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+        closeModal();
+    }
+});

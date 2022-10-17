@@ -9,10 +9,10 @@
 <body>
 <main>
     <section class="player player--1 player--active">
-        <img src="player--1.png" class="ryu" alt="Ryu Profile Pic">
+        <img src="player--1.png" class="icon--1" alt="Ryu Profile Pic">
         <progress class="health hlth-bar--1" id="hlth--1" max="100" value="100"></progress>
         <p class="score" id="score--1">0</p>
-        <h2 class="name" id="name--1">Damage Done</h2>
+        <h5 class="name" id="name--1">Damage Done</h5>
         <div class="current">
             <p class="current-score" id="current--1">0</p>
             <p class="current-label">HIT COMBO</p>
@@ -20,10 +20,10 @@
     </section>
     <div class="ko-symbol"><h3>KO</h3></div>
     <section class="player player--2">
-        <img src="player--2.png" class="ken" alt="ken Profile Pic">
+        <img src="player--2.png" class="icon--2" alt="ken Profile Pic">
         <progress class="health hlth-bar--2" id="hlth--2" max="100" value="100"></progress>
         <p class="score" id="score--2">0</p>
-        <h2 class="name" id="name--2">Damage Done</h2>
+        <h5 class="name" id="name--2">Damage Done</h5>
         <div class="current">
             <p class="current-score" id="current--2">0</p>
             <p class="current-label">HIT COMBO</p>
@@ -31,15 +31,21 @@
     </section>
     <img src="dice-6.png" alt="Playing dice" class="dice--1" />
     <img src="dice-6.png" alt="Playing dice" class="dice--2" />
-    <button class="btn btn--menu">Menu</button>
     <button class="btn btn--roll">Attack</button>
     <button class="btn btn--hold">Defend</button>
+    <button class="btn btn--menu">Menu</button>
 </main>
+<section class="modal hidden">
+<!--    <button class="close-modal">&times;</button>-->
+    <h2>MENU SELECT</h2>
+    <button type="button" class="btn btn--modal restart">Restart</button>
+</section>
+<div class="overlay hidden"></div>
 <section class="win-screen hidden">
     <article class="win-main">
     </article>
-    <button type="button" class="btn btn--win" id="rematch">Rematch</button>
-    <button type="button" class="btn btn--win" id="restart">Restart</button>
+    <button type="button" class="btn btn--win rematch">Rematch</button>
+    <button type="button" class="btn btn--win restart">Restart</button>
 </section>
 </body>
 </html>
