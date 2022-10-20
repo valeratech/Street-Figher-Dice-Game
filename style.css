@@ -122,7 +122,7 @@ h3 {
     letter-spacing: -12px;
     top: 24px;
     left: 707px;
-    z-index: 10;
+    z-index: 22;
 }
 
 h4, h5 {
@@ -299,7 +299,7 @@ progress {
     height: 500px;
     background-color: #f9d60e;
     border-radius: 50%;
-    margin-top: 150px;
+    margin-top: 170px;
 }
 
 .btn--win {
@@ -336,19 +336,26 @@ progress {
     padding: 6rem;
     border-radius: 5px;
     box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
-    z-index: 10;
+    z-index: 51;
 
+}
+
+.player-quote {
+    font-size: 3rem;
+    width: 600px;
+    position: absolute;
+    top: 870px;
 }
 
 .overlay {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
+    width: 100vh;
+    height: 100vh;
     background-color: rgba(0, 0, 0, 0.6);
     backdrop-filter: blur(3px);
-    z-index: 5;
+    z-index: 50;
 }
 
 .btn--modal {
@@ -371,5 +378,5 @@ progress {
 }
 
 #hlth--1, #hlth--2 {
-    z-index: 200;
+    z-index: 21;
 }

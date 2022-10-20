@@ -16,6 +16,18 @@ const player = function (name, idNum) {
     const playerContainer2 = document.querySelector('.player--2');
     const winWindow = document.querySelector('.win-screen');
     const winMain = document.querySelector('.win-main');
+    const winQuote = {
+        player1: [
+            "You must defeat Sheng Long/my Dragon Punch/my Shoryuken to stand a chance.",
+            "To live is to fight, to fight is to live!",
+            "You must love competition before you can achieve victory."
+        ],
+        player2: [
+            "Attack me if you dare, I will crush you!",
+            "Well, at least you threw a punch...",
+            "You are not bad, but not good either."
+        ]
+    };
 
     // the sum of points pushed to the
     let playerScore = 0;
@@ -91,14 +103,15 @@ const player = function (name, idNum) {
         winWindow.classList.toggle('hidden');
         winWindow.style.display = 'flex';
         const playerIcon = document.createElement('img');
+        const playerQuote = document.createElement('p');
+        playerQuote.textContent = winQuote[`player${activePlayer}`][Math.floor(Math.random() * winQuote[`player${activePlayer}`].length)];
         playerIcon.src = `player--${activePlayer}.png`;
         playerIcon.className = `win-icon--${activePlayer}`;
-        winMain.appendChild(playerIcon);
+        playerQuote.className = 'player-quote';
+        winMain.append(playerIcon, playerQuote);
         console.log(activePlayer)
         // const createCaption1 = document.createElement()
-
     };
-
     return {roll, holdScore};
 };
 
