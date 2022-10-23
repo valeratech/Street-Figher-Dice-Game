@@ -18,7 +18,7 @@ const player = function (name, idNum) {
     const winMain = document.querySelector('.win-main');
     const winQuote = {
         player1: [
-            "You must defeat Sheng Long/my Dragon Punch/my Shoryuken to stand a chance.",
+            "You must defeat Sheng Long to stand a chance.",
             "To live is to fight, to fight is to live!",
             "You must love competition before you can achieve victory."
         ],
@@ -104,7 +104,7 @@ const player = function (name, idNum) {
         winWindow.style.display = 'flex';
         const playerIcon = document.createElement('img');
         const playerQuote = document.createElement('p');
-        playerQuote.textContent = winQuote[`player${activePlayer}`][Math.floor(Math.random() * winQuote[`player${activePlayer}`].length)];
+        playerQuote.textContent = (winQuote[`player${activePlayer}`][Math.floor(Math.random() * winQuote[`player${activePlayer}`].length)]).toUpperCase();
         playerIcon.src = `player--${activePlayer}.png`;
         playerIcon.className = `win-icon--${activePlayer}`;
         playerQuote.className = 'player-quote';

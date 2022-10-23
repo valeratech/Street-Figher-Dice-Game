@@ -108,6 +108,7 @@ main {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     filter: drop-shadow(2px 2px #0e37d8);
+    z-index: 21;
 }
 
 #player1--hlth {
@@ -361,7 +362,9 @@ progress {
 }
 
 .player-quote {
+    color: #454545;
     font-size: 3rem;
+    font-weight: bold;
     width: 600px;
     position: absolute;
     top: 870px;
