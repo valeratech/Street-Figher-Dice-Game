@@ -123,6 +123,7 @@ main {
 
 h2 {
     font-size: 48px;
+    font-weight: bold;
     background: -webkit-linear-gradient(#fefedd, #fefd43, #ffbc1f, #db052e 60%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -230,6 +231,7 @@ progress {
 }
 
 .dice--1 {
+    display: none;
     position: absolute;
     left: 45%;
     top: 165px;
@@ -239,6 +241,7 @@ progress {
 }
 
 .dice--2 {
+    display: none;
     position: absolute;
     left: 55%;
     top: 165px;
@@ -321,12 +324,22 @@ progress {
     background-color: #f9d60e;
     border-radius: 50%;
     margin-top: 170px;
+    box-shadow: #ffeeb6 0 0 50px 50px;
+}
+
+.win-main:hover {
+    box-shadow: #ffeeb6 0 0 500px 500px;
+    transition: box-shadow .01s .1s;
 }
 
 .btn--win {
     position: static;
     align-self: end;
     margin-bottom: 10px;
+}
+
+.btn--win:hover {
+    border-style: none;
 }
 
 .win-icon--1 {
@@ -351,14 +364,14 @@ progress {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 35%;
+    width: 25%;
+    height: 40%;
 
     background-color: #181ce0;
     padding: 6rem;
     border-radius: 5px;
     box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
     z-index: 51;
-
 }
 
 .player-quote {

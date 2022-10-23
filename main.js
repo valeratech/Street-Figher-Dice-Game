@@ -32,7 +32,7 @@ const player = function (name, idNum) {
     // the sum of points pushed to the
     let playerScore = 0;
     let currentScore = 0;
-    let winningScore =  1;
+    let winningScore =  100;
     let dice = [];
 
     // return current score
@@ -112,6 +112,14 @@ const player = function (name, idNum) {
         console.log(activePlayer)
         // const createCaption1 = document.createElement()
     };
+
+    const clearPlayer = function() {
+        playerScore = 0;
+        currentScore = 0;
+        healthBar1.value = 100;
+    }
+
+
     return {roll, holdScore};
 };
 
@@ -134,17 +142,18 @@ btnHold.addEventListener('click', () => {
 });
 
 
-// Testing
+// Menu Buttons
+// New Game
 document.querySelectorAll('.restart').forEach((button) => {
     button.addEventListener('click', () => window.location.reload());
 });
-
 
 /* Modal */
 const modal = document.querySelector('.modal');
 const overlay = document.querySelector('.overlay');
 const btnCloseModal = document.querySelector('.exit');
 const btnsOpenModal = document.querySelectorAll('.btn--menu');
+const info = document.querySelector('.info');
 
 const openModal = function () {
     modal.classList.remove('hidden');
