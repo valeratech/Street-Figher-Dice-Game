@@ -100,6 +100,26 @@ main {
     height: 40px;
 }
 
+#player1--hlth, #player2--hlth {
+    font-size: 3rem;
+    font-weight: bold;
+    position: absolute;
+    background: -webkit-linear-gradient(#fefedd, #fefd43, #ffbc1f 60%, #db052e);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(2px 2px #0e37d8);
+}
+
+#player1--hlth {
+    left: 168px;
+    top: 90px;
+}
+
+#player2--hlth {
+    right: 168px;
+    top: 90px;
+}
+
 h2 {
     font-size: 48px;
     background: -webkit-linear-gradient(#fefedd, #fefd43, #ffbc1f, #db052e 60%);
