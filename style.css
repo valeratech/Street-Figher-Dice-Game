@@ -14,13 +14,55 @@ body {
     font-family: 'Nunito', sans-serif;
     height: 100vh;
     color: #333;
-    background-image: url('ryu-background.jpg');
     background-size: cover;
-    background-color: #000000;   /*MUST BE USED WITH background-blend-mode*/
+    background-color: #ffffff;   /*MUST BE USED WITH background-blend-mode*/
     background-blend-mode: screen;  /*MUST BE USED WITH background-color*/
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+/* Menu Select */
+
+#root-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vh;
+    height: 100vh;
+    border: solid;
+}
+
+#menu-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border: solid;
+    flex-basis: 500px;
+}
+
+#menu-header {
+    display: flex;
+    border: solid;
+}
+
+#menu-main {
+    display: flex;
+    border: solid;
+}
+
+#player-select {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+    grid-template-rows: 1fr 1fr;
+    grid-auto-rows: 1fr;
+}
+
+.player-box {
+    height: 50px;
+    width: 50px;
+    border: solid;
 }
 
 /* LAYOUT */
