@@ -15,7 +15,7 @@ body {
     height: 100vh;
     color: #333;
     background-size: cover;
-    background-color: #ffffff;   /*MUST BE USED WITH background-blend-mode*/
+    background-color: #fffd00;   /*MUST BE USED WITH background-blend-mode*/
     background-blend-mode: screen;  /*MUST BE USED WITH background-color*/
     display: flex;
     align-items: center;
@@ -57,18 +57,55 @@ body {
     border: solid;
 }
 
+#character--p1, #character--p2 {
+    border: solid;
+}
+
 #player-select {
-    width: 200px;
+    width: 150px;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
     grid-template-rows: 1fr 1fr;
     grid-auto-rows: 1fr;
-    gap: 0;
 }
 
-.player-box {
-    border: solid;
+#char--akuma {
+    background: url("./SF-KO.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
 }
+
+.active--1, .active--2 {
+    height: 50px;
+    width: 50px;
+    border-radius: 10px;
+    /*height: 75px;*/
+    /*width: 75px;*/
+    border: solid white;
+}
+
+.active--1 {
+
+}
+
+.active--1:hover {
+    border: solid red;
+}
+
+.active--2 {
+
+}
+
+.active--2:hover {
+    border: solid blue;
+}
+
+
+
+/*.player-box:active {*/
+/*    color: red;*/
+/*}*/
 
 /* LAYOUT */
 main {
