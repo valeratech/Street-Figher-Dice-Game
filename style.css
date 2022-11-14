@@ -38,23 +38,19 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    border: solid;
 }
 
 #menu-header {
     display: flex;
-    border: solid;
 }
 
 .menu-display {
     height: 400px;
     width: 400px;
-    border: solid;
 }
 
 #menu-main {
     display: flex;
-    border: solid;
 }
 
 #character--p1, #character--p2 {
@@ -62,27 +58,62 @@ body {
 }
 
 #player-select {
-    width: 150px;
+    width: 300px;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(50px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
     grid-template-rows: 1fr 1fr;
     grid-auto-rows: 1fr;
 }
 
+#char--ryu {
+    background: url("ryu_transparent_thumb.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+#char--chun {
+    background: url("chun_transparent_thumb.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+#char--ken {
+    background: url("ken_transparent_thumb.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
 #char--akuma {
-    background: url("./SF-KO.jpg");
+    background: url("akuma_transparent_thumb.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+#char--sakura {
+    background: url("sakura_transparent_thumb.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+#char--dan {
+    background: url("dan_transparent_thumb.png");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
 }
 
 .active--1, .active--2 {
-    height: 50px;
-    width: 50px;
+    height: 100px;
+    width: 100px;
     border-radius: 10px;
     /*height: 75px;*/
     /*width: 75px;*/
-    border: solid white;
+    border: solid white 6px;
 }
 
 .active--1 {

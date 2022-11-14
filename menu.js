@@ -4,12 +4,17 @@ const playerSelect = (function () {
     const contCharacterOne = document.getElementById('character--p1--p2');
     const contCharacterTwo = document.getElementById('character--p1--p2');
 
-    const updateDisplay = function() {
-
+    const updateDisplay = function (e) {
+        if (e.target.id === 'char--ryu') {
+            contPlayerOne.removeChild();
+            contPlayerOne.appendChild()
+        }
     }
+
     return {updateDisplay}
 })();
 
-const selectContainer = document.getElementById('player-select')
-selectContainer.addEventListener('click', (e) => console.log(e.target))
+
+const selectContainer = document.getElementById('player-select');
+selectContainer.addEventListener('mouseover', playerSelect.updateDisplay());
 
