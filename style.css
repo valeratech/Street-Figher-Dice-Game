@@ -44,9 +44,15 @@ body {
     display: flex;
 }
 
+img {
+    border-radius: 25px;
+}
+
 .menu-display {
-    height: 400px;
-    width: 400px;
+    height: 418px;
+    width: 418px;
+    border: white 10px solid;
+    border-radius: 25px;
 }
 
 #menu-main {
@@ -55,6 +61,11 @@ body {
 
 #character--p1, #character--p2 {
     border: solid;
+}
+
+#player-title {
+    height: 410px;
+    width: 410px;
 }
 
 #player-select {
