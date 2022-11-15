@@ -30,7 +30,6 @@ body {
     align-items: center;
     width: 100%;
     height: 100%;
-    border: solid;
 }
 
 #menu-container {
@@ -48,6 +47,7 @@ img {
     /*max-width: 100%;*/
     max-height: 100%;
     border-radius: 25px;
+    z-index: 10;
 }
 
 .menu-display {
@@ -55,6 +55,8 @@ img {
     width: 418px;
     border: white 10px solid;
     border-radius: 25px;
+    background: linear-gradient(to right, #e66465, #9198e5);
+
 }
 
 #menu-main {
@@ -63,8 +65,8 @@ img {
 }
 
 #character--p1, #character--p2 {
-    width: 150px;
-    height: 200px;
+    width: 200px;
+    height: 250px;
 }
 
 #menu-title {
@@ -81,15 +83,16 @@ img {
 }
 
 #player-select {
-    width: 300px;
+    width: 375px;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(125px, 1fr));
     grid-template-rows: 1fr 1fr;
     grid-auto-rows: 1fr;
 }
 
 #char--ryu {
     background: url("ryu_transparent_thumb.png");
+    background-color: #0c63b1;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
@@ -97,6 +100,7 @@ img {
 
 #char--chun {
     background: url("chun_transparent_thumb.png");
+    background-color: #0c63b1;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
@@ -104,6 +108,7 @@ img {
 
 #char--ken {
     background: url("ken_transparent_thumb.png");
+    background-color: #0c63b1;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
@@ -111,6 +116,7 @@ img {
 
 #char--akuma {
     background: url("akuma_transparent_thumb.png");
+    background-color: #0c63b1;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
@@ -118,6 +124,7 @@ img {
 
 #char--sakura {
     background: url("sakura_transparent_thumb.png");
+    background-color: #0c63b1;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
@@ -125,26 +132,26 @@ img {
 
 #char--dan {
     background: url("dan_transparent_thumb.png");
+    background-color: #0c63b1;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
 }
 
 .active--1, .active--2 {
-    height: 100px;
-    width: 100px;
+    height: 125px;
+    width: 125px;
     border-radius: 10px;
     /*height: 75px;*/
     /*width: 75px;*/
-    border: solid white 6px;
+    border: solid white 7px;
 }
 
 .active--1 {
-
 }
 
 .active--1:hover {
-    border: solid red;
+    border: solid red 7px;
 }
 
 .active--2 {
@@ -152,7 +159,7 @@ img {
 }
 
 .active--2:hover {
-    border: solid blue;
+    border: solid blue 7px;
 }
 
 
@@ -184,16 +191,16 @@ main {
     transition: all 0.35s;
 }
 .player--1 {
-    background-color: rgba(209, 38, 50, 0.7);
+    background-color: #db052e;
 }
 
 .player--2 {
-    background-color: rgba(59, 93, 187, 0.7);
+    background-color: #0c63b1;
 }
 
 .player--active {
     border: solid;
-    border-width: 2px;
+    border-width: 10px;
     border-color: #ced8ed;
     border-radius: 9px;
 }
@@ -249,6 +256,14 @@ main {
     z-index: 21;
 }
 
+.sf-logo-container {
+    height: 150px;
+    width: 150px;
+    position: absolute;
+    top: 50px;
+    left: 50px;
+}
+
 #player1--hlth {
     left: 168px;
     top: 90px;
@@ -267,6 +282,11 @@ h2 {
     -webkit-text-fill-color: transparent;
     text-align: center;
     margin-bottom: 30px;
+}
+
+.logo-container {
+    width: 100px;
+    height: 100px;
 }
 
 h3 {
