@@ -3,174 +3,157 @@ const characterScreen = (function () {
     const contPlayerTwo = document.getElementById('container--p2');
     const contCharacterOne = document.getElementById('character--p1');
     const contCharacterTwo = document.getElementById('character--p2');
-    const selectButtons = document.querySelectorAll('.active--1');
+    const playerOneName = document.getElementById('p1--name');
+    const playerTwoName = document.getElementById('p2--name');
+    let selectButtons = document.querySelectorAll('.active--1');
+
+    const updateName = function(name, player) {
+        if (player === 'One') {
+            playerOneName.removeChild(playerOneName.firstChild);
+            let paragraph = document.createElement('p');
+            paragraph.textContent = name;
+            playerOneName.appendChild(paragraph);
+        } else {
+            playerTwoName.removeChild(playerTwoName.firstChild);
+            let paragraph = document.createElement('p');
+            paragraph.textContent = name;
+            playerTwoName.appendChild(paragraph);
+        }
+    }
+
+    const selectButton = function(char, player, color) {
+        const myButton = document.querySelector(`#char--${char}`);
+        // myButton.style.filter = "grayscale(100%)"
+        myButton.textContent = player;
+        myButton.style.color = color;
+        myButton.style.fontSize = '48px';
+        myButton.style.fontWeight = '900'
+        myButton.style.borderColor = color;
+        myButton.style.textShadow = '-4px 4px 3px #000';
+        myButton.disabled = true;
+        if (player === '1P') {
+            let img = document.createElement('img');
+            img.src = `${char}_transparent.png`;
+            contCharacterOne.appendChild(img);
+        } else {
+            let img = document.createElement('img');
+            img.src = `${char}_transparent.png`;
+            contCharacterTwo.appendChild(img);
+            selectContainer.removeEventListener('mouseover', characterScreen.updateDisplay);
+            selectContainer.removeEventListener('click', characterScreen.selectPlayer);
+            selectButtons = document.querySelectorAll('.active--2');
+            selectButtons.forEach((button) => {
+                button.disabled = true;
+            });
+        }
+    };
+
+    const changeImage = function(char, player) {
+        if (player === 'One') {
+            contPlayerOne.removeChild(contPlayerOne.firstChild);
+            let img = document.createElement('img');
+            img.src = `${char}_transparent_profile.png`;
+            contPlayerOne.appendChild(img);
+        } else {
+            contPlayerTwo.removeChild(contPlayerTwo.firstChild);
+            let img = document.createElement('img');
+            img.src = `${char}_transparent_profile.png`;
+            contPlayerTwo.appendChild(img);
+        }
+    };
 
     const updateDisplay = function(e) {
         // console.log(e.target.id);
         console.log(e.target.className);
         if (e.target.className === 'active--1') {
             if (e.target.id === 'char--ryu') {
-                contPlayerOne.removeChild(contPlayerOne.firstChild);
-                let img = document.createElement('img');
-                img.src = 'ryu_transparent_profile.png';
-                contPlayerOne.appendChild(img);
+                characterScreen.changeImage('ryu', 'One');
+                characterScreen.updateName('ryu', 'One');
             } else if (e.target.id === 'char--chun') {
-                contPlayerOne.removeChild(contPlayerOne.firstChild);
-                let img = document.createElement('img');
-                img.src = 'chun_transparent_profile.png';
-                contPlayerOne.appendChild(img);
+                characterScreen.changeImage('chun', 'One');
+                characterScreen.updateName('chun', 'One');
             } else if (e.target.id === 'char--ken') {
-                contPlayerOne.removeChild(contPlayerOne.firstChild);
-                let img = document.createElement('img');
-                img.src = 'ken_transparent_profile.png';
-                contPlayerOne.appendChild(img);
+                characterScreen.changeImage('ken', 'One');
+                characterScreen.updateName('ken', 'One');
             } else if (e.target.id === 'char--akuma') {
-                contPlayerOne.removeChild(contPlayerOne.firstChild);
-                let img = document.createElement('img');
-                img.src = 'akuma_transparent_profile.png';
-                contPlayerOne.appendChild(img);
+                characterScreen.changeImage('akuma', 'One');
+                characterScreen.updateName('akuma', 'One');
             } else if (e.target.id === 'char--sakura') {
-                contPlayerOne.removeChild(contPlayerOne.firstChild);
-                let img = document.createElement('img');
-                img.src = 'sakura_transparent_profile.png';
-                contPlayerOne.appendChild(img);
+                characterScreen.changeImage('sakura', 'One');
+                characterScreen.updateName('sakura', 'One');
             } else if (e.target.id === 'char--dan') {
-                contPlayerOne.removeChild(contPlayerOne.firstChild);
-                let img = document.createElement('img');
-                img.src = 'dan_transparent_profile.png';
-                contPlayerOne.appendChild(img);
+                characterScreen.changeImage('dan', 'One');
+                characterScreen.updateName('dan', 'One');
             }
         } else {
             if (e.target.id === 'char--ryu') {
-                contPlayerTwo.removeChild(contPlayerTwo.firstChild);
-                let img = document.createElement('img');
-                img.src = 'ryu_transparent_profile.png';
-                contPlayerTwo.appendChild(img);
+                characterScreen.changeImage('ryu', 'Two');
+                characterScreen.updateName('ryu', 'Two');
             } else if (e.target.id === 'char--chun') {
-                contPlayerTwo.removeChild(contPlayerTwo.firstChild);
-                let img = document.createElement('img');
-                img.src = 'chun_transparent_profile.png';
-                contPlayerTwo.appendChild(img);
+                characterScreen.changeImage('chun', 'Two');
+                characterScreen.updateName('chun', 'Two');
             } else if (e.target.id === 'char--ken') {
-                contPlayerTwo.removeChild(contPlayerTwo.firstChild);
-                let img = document.createElement('img');
-                img.src = 'ken_transparent_profile.png';
-                contPlayerTwo.appendChild(img);
+                characterScreen.changeImage('ken', 'Two');
+                characterScreen.updateName('ken', 'Two');
             } else if (e.target.id === 'char--akuma') {
-                contPlayerTwo.removeChild(contPlayerTwo.firstChild);
-                let img = document.createElement('img');
-                img.src = 'akuma_transparent_profile.png';
-                contPlayerTwo.appendChild(img);
+                characterScreen.changeImage('akuma', 'Two');
+                characterScreen.updateName('akuma', 'Two');
             } else if (e.target.id === 'char--sakura') {
-                contPlayerTwo.removeChild(contPlayerTwo.firstChild);
-                let img = document.createElement('img');
-                img.src = 'sakura_transparent_profile.png';
-                contPlayerTwo.appendChild(img);
+                characterScreen.changeImage('sakura', 'Two');
+                characterScreen.updateName('sakura', 'Two');
             } else if (e.target.id === 'char--dan') {
-                contPlayerTwo.removeChild(contPlayerTwo.firstChild);
-                let img = document.createElement('img');
-                img.src = 'dan_transparent_profile.png';
-                contPlayerTwo.appendChild(img);
+                characterScreen.changeImage('dan', 'Two');
+                characterScreen.updateName('dan', 'Two');
             }
         }
-    }
+    };
 
     const selectPlayer = function(e) {
         if (e.target.id === 'char--ryu') {
-            console.log('hello');
-            const myButton = document.querySelector('#char--ryu');
-            myButton.style.filter = "grayscale(100%)"
-            myButton.disabled = true;
             if (e.target.className === 'active--1') {
-                let img = document.createElement('img');
-                img.src = 'ryu_transparent.png';
-                contCharacterOne.appendChild(img);
+                characterScreen.selectButton('ryu', '1P', 'red');
             } else {
-                let img = document.createElement('img');
-                img.src = 'ryu_transparent.png';
-                contCharacterTwo.appendChild(img);
+                characterScreen.selectButton('ryu', '2P', 'blue');
             }
         } else if (e.target.id === 'char--chun') {
-            console.log('hello');
-            const myButton = document.querySelector('#char--chun');
-            myButton.style.filter = "grayscale(100%)"
-            myButton.disabled = true;
             if (e.target.className === 'active--1') {
-                let img = document.createElement('img');
-                img.src = 'chun_transparent.png';
-                contCharacterOne.appendChild(img);
+                characterScreen.selectButton('chun', '1P', 'red');
             } else {
-                let img = document.createElement('img');
-                img.src = 'chun_transparent.png';
-                contCharacterTwo.appendChild(img);
+                characterScreen.selectButton('chun', '2P', 'blue');
             }
         } else if (e.target.id === 'char--ken') {
-            console.log('hello');
-            const myButton = document.querySelector('#char--ken');
-            myButton.style.filter = "grayscale(100%)"
-            myButton.disabled = true;
             if (e.target.className === 'active--1') {
-                let img = document.createElement('img');
-                img.src = 'ken_transparent.png';
-                contCharacterOne.appendChild(img);
+                characterScreen.selectButton('ken', '1P', 'red');
             } else {
-                let img = document.createElement('img');
-                img.src = 'ken_transparent.png';
-                contCharacterTwo.appendChild(img);
+                characterScreen.selectButton('ken', '2P', 'blue');
             }
         } else if (e.target.id === 'char--akuma') {
-            console.log('hello');
-            const myButton = document.querySelector('#char--akuma');
-            myButton.style.filter = "grayscale(100%)"
-            myButton.disabled = true;
             if (e.target.className === 'active--1') {
-                let img = document.createElement('img');
-                img.src = 'akuma_transparent.png';
-                contCharacterOne.appendChild(img);
+                characterScreen.selectButton('akuma', '1P', 'red');
             } else {
-                let img = document.createElement('img');
-                img.src = 'akuma_transparent.png';
-                contCharacterTwo.appendChild(img);
+                characterScreen.selectButton('akuma', '2P', 'blue');
             }
         } else if (e.target.id === 'char--sakura') {
-            console.log('hello');
-            const myButton = document.querySelector('#char--sakura');
-            myButton.style.filter = "grayscale(100%)"
-            myButton.disabled = true;
             if (e.target.className === 'active--1') {
-                let img = document.createElement('img');
-                img.src = 'sakura_transparent.png';
-                contCharacterOne.appendChild(img);
+                characterScreen.selectButton('sakura', '1P', 'red');
             } else {
-                let img = document.createElement('img');
-                img.src = 'sakura_transparent.png';
-                contCharacterTwo.appendChild(img);
+                characterScreen.selectButton('sakura', '2P', 'blue');
             }
         } else if (e.target.id === 'char--dan') {
-            console.log('hello');
-            const myButton = document.querySelector('#char--dan');
-            myButton.style.filter = "grayscale(100%)"
-            myButton.disabled = true;
             if (e.target.className === 'active--1') {
-                let img = document.createElement('img');
-                img.src = 'dan_transparent.png';
-                contCharacterOne.appendChild(img);
+                characterScreen.selectButton('dan', '1P', 'red');
             } else {
-                let img = document.createElement('img');
-                img.src = 'dan_transparent.png';
-                contCharacterTwo.appendChild(img);
+                characterScreen.selectButton('dan', '2P', 'blue');
             }
         }
         selectButtons.forEach((button) => {
             button.classList = 'active--2';
         })
     }
-
-    return {updateDisplay, selectPlayer}
+    return {updateDisplay, selectPlayer, selectButton, changeImage, updateName}
 })();
 
 
 const selectContainer = document.getElementById('player-select');
 selectContainer.addEventListener('mouseover', characterScreen.updateDisplay);
-
 selectContainer.addEventListener('click', characterScreen.selectPlayer);

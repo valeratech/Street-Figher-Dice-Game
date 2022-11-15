@@ -80,6 +80,7 @@ img {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     filter: drop-shadow(2px 2px #0e37d8);
+    z-index: 21;
 }
 
 #player-select {
@@ -162,7 +163,27 @@ img {
     border: solid blue 7px;
 }
 
+.active--3 {
 
+}
+
+.active--3:hover {
+    border: solid grey 7px;
+}
+.character-name {
+    width: 200px;
+}
+
+.character-name > p {
+    font-size: 48px;
+    font-weight: bold;
+    background: -webkit-linear-gradient(#fefedd, #fefd43, #ffbc1f, #db052e 60%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+    margin-bottom: 30px;
+    filter: drop-shadow(2px 2px #0e37d8);
+}
 
 /*.player-box:active {*/
 /*    color: red;*/
