@@ -23,7 +23,7 @@ const characterScreen = (function () {
 
     const selectButton = function(char, player, color) {
         const myButton = document.querySelector(`#char--${char}`);
-        // myButton.style.filter = "grayscale(100%)"
+
         myButton.textContent = player;
         myButton.style.color = color;
         myButton.style.fontSize = '48px';
@@ -43,7 +43,14 @@ const characterScreen = (function () {
             selectContainer.removeEventListener('click', characterScreen.selectPlayer);
             selectButtons = document.querySelectorAll('.active--2');
             selectButtons.forEach((button) => {
+                console.log(button.style.borderColor);
                 button.disabled = true;
+                if (button.style.borderColor === 'red' || button.style.borderColor === 'blue') {
+                    // pass;
+                } else {
+                    button.style.borderColor = 'white';
+                    button.style.filter = "grayscale(100%)";
+                }
             });
         }
     };
