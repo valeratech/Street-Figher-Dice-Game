@@ -53,10 +53,10 @@ img {
 
 #menu-title {
     font-size: 48px;
-    background: -webkit-linear-gradient(#fefedd, #fefd43, #ffbc1f 60%, #db052e);
+    background: -webkit-linear-gradient(#fefd43, #ffbc1f 60%, #db052e);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    filter: drop-shadow(2px 2px #0e37d8);
+    filter: drop-shadow(3px 3px #0e37d8);
     z-index: 21;
 }
 
@@ -202,9 +202,37 @@ img {
     filter: drop-shadow(2px 2px #0e37d8);
 }
 
-/*.player-box:active {*/
-/*    color: red;*/
-/*}*/
+#myProgress {
+    width: 50%;
+    background-color: #ddd;
+    border-radius: 10px;
+    position: relative;
+}
+
+.loading {
+    position: absolute;
+    right: 40%;
+    bottom: -50%;
+    z-index: 0;
+    font: 25px bolder;
+}
+
+
+
+#myBar {
+    width: 0%;
+    height: 60px;
+    background-color: #db052e;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 30px;
+    color: white;
+    border-radius: 10px;
+    font: 25px bold;
+    z-index: 100;
+}
+
 
 /* LAYOUT */
 main {
@@ -290,7 +318,7 @@ main {
     background: -webkit-linear-gradient(#fefedd, #fefd43, #ffbc1f 60%, #db052e);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    filter: drop-shadow(2px 2px #0e37d8);
+    filter: drop-shadow(6px 6px #0e37d8);
     z-index: 21;
 }
 

@@ -6,6 +6,8 @@ const characterScreen = (function () {
     const playerOneName = document.getElementById('p1--name');
     const playerTwoName = document.getElementById('p2--name');
     let selectButtons = document.querySelectorAll('.active--1');
+    const loading = document.querySelector('.loading');
+    var i = 0;
 
     const updateName = function(name, player) {
         if (player === 'One') {
@@ -121,46 +123,77 @@ const characterScreen = (function () {
                 characterScreen.selectButton('ryu', '1P', 'red');
             } else {
                 characterScreen.selectButton('ryu', '2P', 'blue');
+                setTimeout(loadScreen, 3500);
             }
         } else if (e.target.id === 'char--chun') {
             if (e.target.className === 'active--1') {
                 characterScreen.selectButton('chun', '1P', 'red');
             } else {
                 characterScreen.selectButton('chun', '2P', 'blue');
+                setTimeout(loadScreen, 3500);
             }
         } else if (e.target.id === 'char--ken') {
             if (e.target.className === 'active--1') {
                 characterScreen.selectButton('ken', '1P', 'red');
             } else {
                 characterScreen.selectButton('ken', '2P', 'blue');
+                setTimeout(loadScreen, 3500);
             }
         } else if (e.target.id === 'char--akuma') {
             if (e.target.className === 'active--1') {
                 characterScreen.selectButton('akuma', '1P', 'red');
             } else {
                 characterScreen.selectButton('akuma', '2P', 'blue');
+                setTimeout(loadScreen, 3500);
             }
         } else if (e.target.id === 'char--sakura') {
             if (e.target.className === 'active--1') {
                 characterScreen.selectButton('sakura', '1P', 'red');
             } else {
                 characterScreen.selectButton('sakura', '2P', 'blue');
+                setTimeout(loadScreen, 3500);
             }
         } else if (e.target.id === 'char--dan') {
             if (e.target.className === 'active--1') {
                 characterScreen.selectButton('dan', '1P', 'red');
             } else {
                 characterScreen.selectButton('dan', '2P', 'blue');
+                setTimeout(loadScreen, 3500);
             }
         }
         selectButtons.forEach((button) => {
             button.classList = 'active--2';
         })
     }
-    return {updateDisplay, selectPlayer, selectButton, changeImage, updateName}
+
+    const loadScreen = function() {
+        if (i == 0) {
+            i = 1;
+            var elem = document.getElementById("myBar");
+            var width = 0;
+            var id = setInterval(frame, 10);
+            function frame() {
+                if (width >= 100) {
+                    clearInterval(id);
+                    i = 0;
+                } else {
+                    width++;
+                    elem.style.width = width + "%";
+                    elem.innerHTML = width  + "%";
+                    if (width === 100) {
+                        loading.textContent = 'COMPLETE';
+                    }
+                }
+            }
+        }
+    }
+
+    return {updateDisplay, selectPlayer, selectButton, changeImage, updateName, loadScreen}
 })();
 
 
 const selectContainer = document.getElementById('player-select');
 selectContainer.addEventListener('mouseover', characterScreen.updateDisplay);
 selectContainer.addEventListener('click', characterScreen.selectPlayer);
+
+
