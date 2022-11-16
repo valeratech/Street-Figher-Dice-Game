@@ -207,6 +207,7 @@ img {
     background-color: #ddd;
     border-radius: 10px;
     position: relative;
+    visibility: hidden;
 }
 
 .loading {
@@ -215,9 +216,8 @@ img {
     bottom: -50%;
     z-index: 0;
     font: 25px bolder;
+    visibility: hidden;
 }
-
-
 
 #myBar {
     width: 0%;
@@ -231,6 +231,7 @@ img {
     border-radius: 10px;
     font: 25px bold;
     z-index: 100;
+    visibility: hidden;
 }
 
 

@@ -7,7 +7,9 @@ const characterScreen = (function () {
     const playerTwoName = document.getElementById('p2--name');
     let selectButtons = document.querySelectorAll('.active--1');
     const loading = document.querySelector('.loading');
-    var i = 0;
+    const myBar = document.getElementById('myBar');
+    const myProgress = document.getElementById('myProgress');
+    let i = 0;
 
     const updateName = function(name, player) {
         if (player === 'One') {
@@ -25,7 +27,6 @@ const characterScreen = (function () {
 
     const selectButton = function(char, player, color) {
         const myButton = document.querySelector(`#char--${char}`);
-
         myButton.textContent = player;
         myButton.style.color = color;
         myButton.style.fontSize = '48px';
@@ -50,6 +51,9 @@ const characterScreen = (function () {
                 if (button.style.borderColor === 'red' || button.style.borderColor === 'blue') {
                     // pass;
                 } else {
+                    myBar.style.visibility = 'initial';
+                    myProgress.style.visibility = 'initial';
+                    loading.style.visibility = 'initial';
                     button.style.borderColor = 'white';
                     button.style.filter = "grayscale(100%)";
                 }
@@ -169,9 +173,9 @@ const characterScreen = (function () {
     const loadScreen = function() {
         if (i == 0) {
             i = 1;
-            var elem = document.getElementById("myBar");
-            var width = 0;
-            var id = setInterval(frame, 10);
+            let elem = document.getElementById("myBar");
+            let width = 0;
+            let id = setInterval(frame, 10);
             function frame() {
                 if (width >= 100) {
                     clearInterval(id);
