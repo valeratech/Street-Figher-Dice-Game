@@ -113,16 +113,13 @@ img {
 
 #menu-main {
     display: flex;
-    gap: 35px;
+    /*gap: 35px;*/
 }
 
 #character--p1, #character--p2 {
     width: 200px;
     height: 250px;
-}
-
-#p1--name, #p2--name {
-    
+    z-index: 10;
 }
 
 #versus-title {
