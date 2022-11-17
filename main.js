@@ -355,7 +355,8 @@ const characterScreen = (function () {
     const translateAmount = 100;
     let translate = 0;
     const slide = () => {
-        translate -= translateAmount;
+        let direction = 'next';
+        direction === "next" ? translate -= translateAmount : translate += translateAmount;
         pages.forEach(
             pages => (pages.style.transform = `translateX(${translate}%)`)
         );
@@ -377,7 +378,7 @@ const characterScreen = (function () {
                     elem.innerHTML = width  + "%";
                     if (width === 100) {
                         loading.textContent = 'COMPLETE';
-                        slide()
+                        setTimeout(slide,1500);
                     }
                 }
             }
