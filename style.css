@@ -10,18 +10,13 @@ html {
     font-size: 62.5%;
 }
 
-.game-screen {
-    /*display: none;*/
-}
 
-.menu-screen {
-    display: none;
-}
 
 
 body {
     font-family: 'Nunito', sans-serif;
     height: 100vh;
+    
     color: #333;
     background-size: cover;
     background-color: #fffd00;   /*MUST BE USED WITH background-blend-mode*/
@@ -31,6 +26,26 @@ body {
     align-items: center;
     justify-content: center;
 }
+
+.menu-screen {
+    /*display: none;*/
+}
+
+/* LAYOUT */
+.game-screen {
+    position: relative;
+    width: 1500px;
+    height: 600px;
+    background-color: rgba(255, 255, 255, 0.35);
+    /*backdrop-filter: blur(200px);*/
+    /*filter: blur();*/
+    box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.25);
+    border-radius: 9px;
+    overflow: hidden;
+    display: flex;
+}
+
+
 
 /* Menu Select */
 
@@ -243,20 +258,6 @@ img {
     visibility: hidden;
 }
 
-
-/* LAYOUT */
-main {
-    position: relative;
-    width: 1500px;
-    height: 600px;
-    background-color: rgba(255, 255, 255, 0.35);
-    /*backdrop-filter: blur(200px);*/
-    /*filter: blur();*/
-    box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.25);
-    border-radius: 9px;
-    overflow: hidden;
-    display: flex;
-}
 
 .player {
     flex: 50%;

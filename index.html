@@ -7,89 +7,90 @@
     <script src="main.js" defer></script>
 </head>
 <body>
-<div class="menu-screen">
-    <header>
-        <div class="sf-logo-container">
-            <img class="sf-logo" src="SF_logo.png" alt="Street Fighter logo">
-        </div>
-        <h1 id="menu-title" class="player-select">PLAYER SELECT</h1>
-    </header>
-    <section id="root-container">
-        <div id="menu-container">
-            <div id="menu-header">
-                <div id="container--p1" class="menu-display"><img></div>
-                <div id="versus-title"><div><img id="versus-logo" src="Street_Fighter_VS_logo.png" alt="Versus fighting image"></div></div>
-                <div id="container--p2" class="menu-display"><img></div>
-            </div>
-            <div id="menu-main">
-                <div id="p1--name" class="character-name"><p>Name</p></div>
-                <div id="character--p1"></div>
-                <div id="player-select">
-                    <button type="button" id="char--ryu" class="active--1"><span class="p1--select p2--select"></span></button>
-                    <button type="button" id="char--chun" class="active--1"><span class="p1--select p2--select"></span></button>
-                    <button type="button" id="char--ken" class="active--1"><span class="p1--select p2--select"></span></button>
-                    <button type="button" id="char--akuma" class="active--1"><span class="p1--select p2--select"></span></button>
-                    <button type="button" id="char--dan" class="active--1"><span class="p1--select p2--select"></span></button>
-                    <button type="button" id="char--sakura" class="active--1"><span class="p1--select p2--select"></span></button>
-                </div>
-                <div id="character--p2"></div>
-                <div id="p2--name" class="character-name"><p>Name</p></div>
-            </div>
-            <div id="myProgress">
-                <span class="loading">LOADING...</span>
-                <div id="myBar"></div>
-            </div>
-        </div>
-    </section>
-    <div class="menu-restart"><button type="button" class="btn btn--win restart">New Game</button></div>
-</div>
-<div class="game-screen">
 <main>
-    <section class="player player--1 player--active">
-        <img src="player--1.png" class="icon--1" alt="Ryu Profile Picture">
-        <progress class="health hlth-bar--1" id="hlth--1" max="100" value="100"></progress>
-        <label for="hlth--1" id="player1--hlth">Player1</label>
-        <p class="score" id="score--1">0</p>
-        <h5 class="name" id="name--1">Damage Done</h5>
-        <div class="current">
-            <p class="current-score" id="current--1">0</p>
-            <p class="current-label">COMBO POINTS</p>
-        </div>
+    <div class="menu-screen">
+        <header>
+            <div class="sf-logo-container">
+                <img class="sf-logo" src="SF_logo.png" alt="Street Fighter logo">
+            </div>
+            <h1 id="menu-title" class="player-select">PLAYER SELECT</h1>
+        </header>
+        <section id="root-container">
+            <div id="menu-container">
+                <div id="menu-header">
+                    <div id="container--p1" class="menu-display"><img></div>
+                    <div id="versus-title"><div><img id="versus-logo" src="Street_Fighter_VS_logo.png" alt="Versus fighting image"></div></div>
+                    <div id="container--p2" class="menu-display"><img></div>
+                </div>
+                <div id="menu-main">
+                    <div id="p1--name" class="character-name"><p>Name</p></div>
+                    <div id="character--p1"></div>
+                    <div id="player-select">
+                        <button type="button" id="char--ryu" class="active--1"><span class="p1--select p2--select"></span></button>
+                        <button type="button" id="char--chun" class="active--1"><span class="p1--select p2--select"></span></button>
+                        <button type="button" id="char--ken" class="active--1"><span class="p1--select p2--select"></span></button>
+                        <button type="button" id="char--akuma" class="active--1"><span class="p1--select p2--select"></span></button>
+                        <button type="button" id="char--dan" class="active--1"><span class="p1--select p2--select"></span></button>
+                        <button type="button" id="char--sakura" class="active--1"><span class="p1--select p2--select"></span></button>
+                    </div>
+                    <div id="character--p2"></div>
+                    <div id="p2--name" class="character-name"><p>Name</p></div>
+                </div>
+                <div id="myProgress">
+                    <span class="loading">LOADING...</span>
+                    <div id="myBar"></div>
+                </div>
+            </div>
+        </section>
+        <div class="menu-restart"><button type="button" class="btn btn--win restart">New Game</button></div>
+    </div>
+    <div class="game-screen">
+        <section class="player player--1 player--active">
+            <img src="player--1.png" class="icon--1" alt="Ryu Profile Picture">
+            <progress class="health hlth-bar--1" id="hlth--1" max="100" value="100"></progress>
+            <label for="hlth--1" id="player1--hlth">Player1</label>
+            <p class="score" id="score--1">0</p>
+            <h5 class="name" id="name--1">Damage Done</h5>
+            <div class="current">
+                <p class="current-score" id="current--1">0</p>
+                <p class="current-label">COMBO POINTS</p>
+            </div>
+        </section>
+        <div class="ko-symbol"><h3>KO</h3></div>
+        <section class="player player--2">
+            <img src="player--2.png" class="icon--2" alt="Ken Profile Picture">
+            <progress class="health hlth-bar--2" id="hlth--2" max="100" value="100"></progress>
+            <label for="hlth--1" id="player2--hlth">Player2</label>
+            <p class="score" id="score--2">0</p>
+            <h5 class="name" id="name--2">Damage Done</h5>
+            <div class="current">
+                <p class="current-score" id="current--2">0</p>
+                <p class="current-label">COMBO POINTS</p>
+            </div>
+        </section>
+        <img src="dice-6.png" alt="Playing dice" class="dice--1" />
+        <img src="dice-6.png" alt="Playing dice" class="dice--2" />
+        <button class="btn btn--roll">Combo</button>
+        <button class="btn btn--hold">Attack</button>
+        <button class="btn btn--menu">Menu</button>
+    </div>
+    <!-- *******************************************************************************************************
+    ******************init()************************************************************************************* -->
+    <section class="modal hidden front--menu">
+        <h2>MENU SELECT</h2>
+        <button type="button" class="btn btn--modal restart">New Game</button>
+        <button type="button" class="btn btn--modal rematch">Rematch</button>
+        <button type="button" class="btn btn--modal info">Info</button>
+        <button type="button" class="btn btn--modal exit">Exit</button>
     </section>
-    <div class="ko-symbol"><h3>KO</h3></div>
-    <section class="player player--2">
-        <img src="player--2.png" class="icon--2" alt="Ken Profile Picture">
-        <progress class="health hlth-bar--2" id="hlth--2" max="100" value="100"></progress>
-        <label for="hlth--1" id="player2--hlth">Player2</label>
-        <p class="score" id="score--2">0</p>
-        <h5 class="name" id="name--2">Damage Done</h5>
-        <div class="current">
-            <p class="current-score" id="current--2">0</p>
-            <p class="current-label">COMBO POINTS</p>
-        </div>
+    <div class="overlay hidden"></div>
+    <section class="win-screen hidden">
+        <article class="win-main">
+        </article>
+        <button type="button" class="btn btn--win rematch">Rematch</button>
+        <button type="button" class="btn btn--win restart">New Game</button>
     </section>
-    <img src="dice-6.png" alt="Playing dice" class="dice--1" />
-    <img src="dice-6.png" alt="Playing dice" class="dice--2" />
-    <button class="btn btn--roll">Combo</button>
-    <button class="btn btn--hold">Attack</button>
-    <button class="btn btn--menu">Menu</button>
+    </div>
 </main>
-<!-- *******************************************************************************************************
-******************init()************************************************************************************* -->
-<section class="modal hidden front--menu">
-    <h2>MENU SELECT</h2>
-    <button type="button" class="btn btn--modal restart">New Game</button>
-    <button type="button" class="btn btn--modal rematch">Rematch</button>
-    <button type="button" class="btn btn--modal info">Info</button>
-    <button type="button" class="btn btn--modal exit">Exit</button>
-</section>
-<div class="overlay hidden"></div>
-<section class="win-screen hidden">
-    <article class="win-main">
-    </article>
-    <button type="button" class="btn btn--win rematch">Rematch</button>
-    <button type="button" class="btn btn--win restart">New Game</button>
-</section>
-</div>
 </body>
 </html>
