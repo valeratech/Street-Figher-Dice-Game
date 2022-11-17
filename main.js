@@ -406,7 +406,7 @@ const characterScreen = (function () {
                     elem.innerHTML = width  + "%";
                     if (width === 100) {
                         loading.textContent = 'COMPLETE';
-                        setTimeout(slide,1500);
+                        setTimeout(slide,4000);
                     }
                 }
             }
