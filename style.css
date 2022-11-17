@@ -288,17 +288,51 @@ img {
 }
 .player--1 {
     background-color: #db052e;
+    position: relative;
 }
 
 .player--2 {
     background-color: #0c63b1;
+    position: relative;
+}
+
+/*Resize with the max-width property*/
+/*Using the max-width property allows the image to maintain its exact aspect ratio*/
+.icon--1 {
+    /*transform: rotateY(180deg);*/
+    max-height: 250px;
+}
+
+.icon--2 {
+    /*transform: rotateY(180deg);*/
+    max-height: 250px;
+}
+
+.icon-container1 {
+    position: absolute;
+    top: 250px;
+    left: 10px;
+    height: 200px;
+    z-index: 10;
+}
+
+.icon-container2 {
+    position: absolute;
+    top: 250px;
+    right: 10px;
+    height: 200px;
+    z-index: 10;
 }
 
 .player--active {
     border: solid;
-    border-width: 10px;
+    border-width: 1px;
     border-color: #ced8ed;
     border-radius: 9px;
+}
+
+.name {
+    z-index: 11;
 }
 
 .player--active .name {
@@ -316,39 +350,19 @@ img {
     border-color: #ced8ed;
 }
 
-/*Resize with the max-width property*/
-/*Using the max-width property allows the image to maintain its exact aspect ratio*/
-.icon--1 {
-    height: auto;
-    max-width: 18%;
-    position: absolute;
-    top: 136px;
-    left: 10px;
-    transform: rotateY(180deg);
-}
-
-.icon--2 {
-    height: auto;
-    max-width: 20%;
-    position: absolute;
-    right: 10px;
-    top: 155px;
-    transform: rotateY(180deg);
-}
-
 .health {
     width: 550px;
     height: 40px;
 }
 
 #player1--hlth, #player2--hlth {
-    font-size: 3rem;
+    font-size: 4.2rem;
     font-weight: bold;
     position: absolute;
     background: -webkit-linear-gradient(#fefedd, #fefd43, #ffbc1f 60%, #db052e);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    filter: drop-shadow(6px 6px #0e37d8);
+    filter: drop-shadow(3px 3px #0e37d8);
     z-index: 21;
 }
 

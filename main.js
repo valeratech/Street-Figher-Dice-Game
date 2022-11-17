@@ -3,17 +3,21 @@
 let score = [0,0];
 let activePlayer = 1;
 
-const player = function (name, idNum) {
+const player = function (idNum) {
     // DOM elements
-    const diceOne = document.querySelector('.dice--1')
-    const diceTwo = document.querySelector('.dice--2')
-    const currentContainer = document.querySelector(`#current--${idNum}`)
-    const scoreContainer = document.querySelector(`#score--${idNum}`)
+    const characterName1 = document.getElementById('player1--hlth');
+    const characterName2 = document.getElementById('player2--hlth');
+    const diceOne = document.querySelector('.dice--1');
+    const diceTwo = document.querySelector('.dice--2');
+    const currentContainer = document.querySelector(`#current--${idNum}`);
+    const scoreContainer = document.querySelector(`#score--${idNum}`);
     const healthBar1 = document.querySelector('.hlth-bar--1');
     const healthBar2 = document.querySelector('.hlth-bar--2');
     const holdButton = document.querySelector('.btn--hold');
     const playerContainer1 = document.querySelector('.player--1');
     const playerContainer2 = document.querySelector('.player--2');
+    const characterImage1 = document.querySelector('.icon--1');
+    const characterImage2 = document.querySelector('.icon--2');
     const winWindow = document.querySelector('.win-screen');
     const winMain = document.querySelector('.win-main');
     const winQuote = {
@@ -46,6 +50,18 @@ const player = function (name, idNum) {
         currentContainer.textContent = 0;
         currentScore = 0;
     }
+
+    // add character image and name to game-screen
+    const updateCharacter = function(char, player) {
+        console.log('HELLO')
+        if (player === '1P') {
+            characterImage1.src = `${char}_transparent.png`
+            characterName1.textContent = char;
+        } else {
+            characterImage2.src = `${char}_transparent.png`;
+            characterName2.textContent = char;
+        }
+    };
 
     // update opponents health bar upon hold-method
     const updateHealth = function() {
@@ -105,7 +121,7 @@ const player = function (name, idNum) {
         const playerIcon = document.createElement('img');
         const playerQuote = document.createElement('p');
         playerQuote.textContent = (winQuote[`player${activePlayer}`][Math.floor(Math.random() * winQuote[`player${activePlayer}`].length)]).toUpperCase();
-        playerIcon.src = `player--${activePlayer}.png`;
+        healthBar1.value > healthBar2.value ? playerIcon.src = characterImage1.src : playerIcon.src = characterImage2.src;
         playerIcon.className = `win-icon--${activePlayer}`;
         playerQuote.className = 'player-quote';
         winMain.append(playerIcon, playerQuote);
@@ -120,12 +136,12 @@ const player = function (name, idNum) {
     }
 
 
-    return {roll, holdScore};
+    return {roll, holdScore, updateCharacter};
 };
 
 // Example players
-const player1 = player('Ryan', 1);
-const player2 = player('Liz', 2);
+const player1 = player(1);
+const player2 = player(2);
 
 // Event listeners
 const btnRoll = document.querySelector('.btn--roll');
@@ -306,42 +322,54 @@ const characterScreen = (function () {
         if (e.target.id === 'char--ryu') {
             if (e.target.className === 'active--1') {
                 characterScreen.selectButton('ryu', '1P', 'red');
+                player1.updateCharacter('ryu', '1P');
             } else {
                 characterScreen.selectButton('ryu', '2P', 'blue');
+                player2.updateCharacter('ryu', '2P');
                 setTimeout(loadScreen, 3500);
             }
         } else if (e.target.id === 'char--chun') {
             if (e.target.className === 'active--1') {
+                player1.updateCharacter('chun', '1P');
                 characterScreen.selectButton('chun', '1P', 'red');
             } else {
+                player2.updateCharacter('chun', '2P');
                 characterScreen.selectButton('chun', '2P', 'blue');
                 setTimeout(loadScreen, 3500);
             }
         } else if (e.target.id === 'char--ken') {
             if (e.target.className === 'active--1') {
+                player1.updateCharacter('ken', '1P');
                 characterScreen.selectButton('ken', '1P', 'red');
             } else {
+                player2.updateCharacter('ken', '2P');
                 characterScreen.selectButton('ken', '2P', 'blue');
                 setTimeout(loadScreen, 3500);
             }
         } else if (e.target.id === 'char--akuma') {
             if (e.target.className === 'active--1') {
+                player1.updateCharacter('akuma', '1P');
                 characterScreen.selectButton('akuma', '1P', 'red');
             } else {
+                player2.updateCharacter('akuma', '2P');
                 characterScreen.selectButton('akuma', '2P', 'blue');
                 setTimeout(loadScreen, 3500);
             }
         } else if (e.target.id === 'char--sakura') {
             if (e.target.className === 'active--1') {
+                player1.updateCharacter('sakura', '1P');
                 characterScreen.selectButton('sakura', '1P', 'red');
             } else {
+                player2.updateCharacter('sakura', '2P');
                 characterScreen.selectButton('sakura', '2P', 'blue');
                 setTimeout(loadScreen, 3500);
             }
         } else if (e.target.id === 'char--dan') {
             if (e.target.className === 'active--1') {
+                player1.updateCharacter('dan', '1P');
                 characterScreen.selectButton('dan', '1P', 'red');
             } else {
+                player2.updateCharacter('dan', '2P');
                 characterScreen.selectButton('dan', '2P', 'blue');
                 setTimeout(loadScreen, 3500);
             }
