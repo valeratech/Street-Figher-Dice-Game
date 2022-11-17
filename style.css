@@ -103,8 +103,8 @@ img {
 }
 
 .menu-display {
-    height: 418px;
-    width: 418px;
+    height: 375px;
+    width: 375px;
     border: white 10px solid;
     border-radius: 25px;
     background: linear-gradient(to right, #e66465, #9198e5);
@@ -121,13 +121,17 @@ img {
     height: 250px;
 }
 
+#p1--name, #p2--name {
+    
+}
+
 #versus-title {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    height: 410px;
-    width: 410px;
+    height: 375px;
+    width: 375px;
 }
 
 #versus-logo {
