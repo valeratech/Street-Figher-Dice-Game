@@ -10,6 +10,15 @@ html {
     font-size: 62.5%;
 }
 
+.game-screen {
+    /*display: none;*/
+}
+
+.menu-screen {
+    display: none;
+}
+
+
 body {
     font-family: 'Nunito', sans-serif;
     height: 100vh;
@@ -369,10 +378,10 @@ h2 {
 h3 {
     color: white;
     text-shadow:
-        -3px -3px 1px #26346c,
-        3px -3px 1px #26346c,
-        -3px 3px 1px #26346c,
-        3px 3px 1px #26346c;
+            -3px -3px 1px #26346c,
+            3px -3px 1px #26346c,
+            -3px 3px 1px #26346c,
+            3px 3px 1px #26346c;
     font-size: 7rem;
     font-weight: 900;
     position: absolute;

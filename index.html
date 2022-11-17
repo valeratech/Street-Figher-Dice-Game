@@ -7,6 +7,43 @@
     <script src="main.js" defer></script>
 </head>
 <body>
+<div class="menu-screen">
+    <header>
+        <div class="sf-logo-container">
+            <img class="sf-logo" src="SF_logo.png" alt="Street Fighter logo">
+        </div>
+        <h1 id="menu-title" class="player-select">PLAYER SELECT</h1>
+    </header>
+    <section id="root-container">
+        <div id="menu-container">
+            <div id="menu-header">
+                <div id="container--p1" class="menu-display"><img></div>
+                <div id="versus-title"><div><img id="versus-logo" src="Street_Fighter_VS_logo.png" alt="Versus fighting image"></div></div>
+                <div id="container--p2" class="menu-display"><img></div>
+            </div>
+            <div id="menu-main">
+                <div id="p1--name" class="character-name"><p>Name</p></div>
+                <div id="character--p1"></div>
+                <div id="player-select">
+                    <button type="button" id="char--ryu" class="active--1"><span class="p1--select p2--select"></span></button>
+                    <button type="button" id="char--chun" class="active--1"><span class="p1--select p2--select"></span></button>
+                    <button type="button" id="char--ken" class="active--1"><span class="p1--select p2--select"></span></button>
+                    <button type="button" id="char--akuma" class="active--1"><span class="p1--select p2--select"></span></button>
+                    <button type="button" id="char--dan" class="active--1"><span class="p1--select p2--select"></span></button>
+                    <button type="button" id="char--sakura" class="active--1"><span class="p1--select p2--select"></span></button>
+                </div>
+                <div id="character--p2"></div>
+                <div id="p2--name" class="character-name"><p>Name</p></div>
+            </div>
+            <div id="myProgress">
+                <span class="loading">LOADING...</span>
+                <div id="myBar"></div>
+            </div>
+        </div>
+    </section>
+    <div class="menu-restart"><button type="button" class="btn btn--win restart">New Game</button></div>
+</div>
+<div class="game-screen">
 <main>
     <section class="player player--1 player--active">
         <img src="player--1.png" class="icon--1" alt="Ryu Profile Picture">
@@ -53,5 +90,6 @@
     <button type="button" class="btn btn--win rematch">Rematch</button>
     <button type="button" class="btn btn--win restart">New Game</button>
 </section>
+</div>
 </body>
 </html>

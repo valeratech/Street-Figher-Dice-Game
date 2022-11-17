@@ -23,7 +23,7 @@ const characterScreen = (function () {
             paragraph.textContent = name;
             playerTwoName.appendChild(paragraph);
         }
-    }
+    };
 
     const selectButton = function(char, player, color) {
         const myButton = document.querySelector(`#char--${char}`);
