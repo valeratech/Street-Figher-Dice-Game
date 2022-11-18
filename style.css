@@ -401,9 +401,17 @@ h2 {
     background: -webkit-linear-gradient(#fefedd, #fefd43, #ffbc1f, #db052e 60%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    text-align: center;
-    margin-bottom: 30px;
+    filter: drop-shadow(2px 2px #e9e1e1);
+    margin-bottom: 20px;
 }
+
+/*.menu-select {*/
+/*    font-size: 48px;*/
+/*    background: -webkit-linear-gradient(#fefedd, #fefd43, #ffbc1f, #db052e 60%);*/
+/*    -webkit-background-clip: text;*/
+/*    -webkit-text-fill-color: transparent;*/
+/*    filter: drop-shadow(8px 8px #2e2b2b);*/
+/*}*/
 
 .logo-container {
     width: 100px;
@@ -657,7 +665,7 @@ progress {
     color: #454545;
     font-size: 3rem;
     font-weight: bold;
-    width: 600px;
+    width: 550px;
     position: absolute;
     top: 870px;
 }
