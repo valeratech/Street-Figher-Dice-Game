@@ -652,8 +652,8 @@ progress {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 600px;
-    height: 800px;
+    width: 550px;
+    height: 400px;
 
     background-color: #181ce0;
     padding: 96px 96px 600px 96px;
