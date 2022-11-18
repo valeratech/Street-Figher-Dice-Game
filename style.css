@@ -652,12 +652,11 @@ progress {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 550px;
-    height: 400px;
-
+    width: 520px;
+    height: 600px;
     background-color: #181ce0;
-    padding: 96px 96px 600px 96px;
-    border-radius: 5px;
+    padding: 96px 96px 96px 96px;
+    border-radius: 8px;
     box-shadow: 0 3rem 5rem rgba(0, 0, 0, 0.3);
     z-index: 51;
 }
