@@ -396,6 +396,7 @@ header {
 }
 
 h2 {
+    text-align: center;
     font-size: 48px;
     font-weight: bold;
     background: -webkit-linear-gradient(#fefedd, #fefd43, #ffbc1f, #db052e 60%);
@@ -651,8 +652,8 @@ progress {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 25%;
-    height: 40%;
+    width: 600px;
+    height: 800px;
 
     background-color: #181ce0;
     padding: 96px 96px 600px 96px;
