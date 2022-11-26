@@ -1,200 +1,3 @@
-'use strict';
-
-let score = [0,0];
-let activePlayer = 1;
-
-const player = function (idNum) {
-    // DOM elements
-    const characterName1 = document.getElementById('player1--hlth');
-    const characterName2 = document.getElementById('player2--hlth');
-    const diceOne = document.querySelector('.dice--1');
-    const diceTwo = document.querySelector('.dice--2');
-    const currentContainer = document.querySelector(`#current--${idNum}`);
-    const scoreContainer = document.querySelector(`#score--${idNum}`);
-    const healthBar1 = document.querySelector('.hlth-bar--1');
-    const healthBar2 = document.querySelector('.hlth-bar--2');
-    const holdButton = document.querySelector('.btn--hold');
-    const playerContainer1 = document.querySelector('.player--1');
-    const playerContainer2 = document.querySelector('.player--2');
-    const characterImage1 = document.querySelector('.icon--1');
-    const characterImage2 = document.querySelector('.icon--2');
-    const winWindow = document.querySelector('.win-screen');
-    const winMain = document.querySelector('.win-main');
-    const winQuote = {
-        player1: [
-            "You must defeat Sheng Long to stand a chance.",
-            "To live is to fight, to fight is to live!",
-            "You must love competition before you can achieve victory."
-        ],
-        player2: [
-            "Attack me if you dare, I will crush you!",
-            "Well, at least you threw a punch...",
-            "You are not bad, but not good either."
-        ]
-    };
-
-    // the sum of points pushed to the
-    let playerScore = 0;
-    let currentScore = 0;
-    let winningScore =  100;
-    let dice = [];
-
-    // return current score
-    const updateCurrent = function(diceTotal) {
-        currentScore += diceTotal
-        currentContainer.textContent = currentScore;
-    }
-
-    // reset the current player score
-    const resetCurrent = function() {
-        currentContainer.textContent = 0;
-        currentScore = 0;
-    }
-
-    // add character image and name to game-screen
-    const updateCharacter = function(char, player) {
-        console.log('HELLO')
-        if (player === '1P') {
-            characterImage1.src = `${char}_transparent.png`
-            characterName1.textContent = char;
-        } else {
-            characterImage2.src = `${char}_transparent.png`;
-            characterName2.textContent = char;
-        }
-    };
-
-    // update opponents health bar upon hold-method
-    const updateHealth = function() {
-        if (activePlayer === 1) {
-            healthBar2.value = winningScore - ((playerScore/winningScore) * 100);
-        } else {
-            healthBar1.value = winningScore - ((playerScore/winningScore) * 100);
-        }
-    }
-
-    // checkScore to see if currentScore and playScore is greater than or equal to winning Score
-    const checkScore = function() {
-        let totalScore = playerScore + currentScore;
-        if (totalScore >= winningScore) {
-            scoreContainer.textContent = totalScore;
-            winScreen();
-            holdScore();
-        }
-    };
-
-    // DISABLE THE BUTTON FOR PLAYER 1 PLAYER 2 ON HOLD
-    const holdScore = function() {
-        let totalScore = playerScore += currentScore;
-        scoreContainer.textContent = totalScore;
-        updateHealth()
-        resetCurrent();
-        switchPlayer();
-    };
-
-    const roll = function() {
-        for (let x = 0; x < 2; x++) {
-            dice[x] = Math.floor(Math.random() * (6 - 1 + 1)) + 1;
-        }
-
-        const diceTotal = dice.reduce((a,b) => a + b, 0);
-        diceOne.src = `dice-${dice[0]}.png`;
-        diceTwo.src = `dice-${dice[1]}.png`;
-        if (!(dice[0] === 1 || dice[1] === 1)) {
-            updateCurrent(diceTotal);
-            checkScore();
-        } else {
-            resetCurrent();
-            switchPlayer();
-            console.log(activePlayer);
-        }
-    };
-
-    const switchPlayer = function() {
-        activePlayer === 1 ? activePlayer = 2 : activePlayer = 1;
-        playerContainer1.classList.toggle('player--active');
-        playerContainer2.classList.toggle('player--active');
-    };
-
-    const winScreen = function() {
-        winWindow.classList.toggle('hidden');
-        winWindow.style.display = 'flex';
-        const playerIcon = document.createElement('img');
-        const playerQuote = document.createElement('p');
-        playerQuote.textContent = (winQuote[`player${activePlayer}`][Math.floor(Math.random() * winQuote[`player${activePlayer}`].length)]).toUpperCase();
-        healthBar1.value > healthBar2.value ? playerIcon.src = characterImage1.src : playerIcon.src = characterImage2.src;
-        playerIcon.className = `win-icon--${activePlayer}`;
-        playerQuote.className = 'player-quote';
-        winMain.append(playerIcon, playerQuote);
-        console.log(activePlayer)
-        // const createCaption1 = document.createElement()
-    };
-
-    const clearPlayer = function() {
-        playerScore = 0;
-        currentScore = 0;
-        healthBar1.value = 100;
-    }
-
-
-    return {roll, holdScore, updateCharacter};
-};
-
-// Example players
-const player1 = player(1);
-const player2 = player(2);
-
-// Event listeners
-const btnRoll = document.querySelector('.btn--roll');
-const btnHold = document.querySelector('.btn--hold');
-const btnRematch = document.querySelector('.rematch');
-const btnRestart = document.querySelector('.restart');
-
-btnRoll.addEventListener('click', () => {
-    activePlayer === 1 ? player1.roll() : player2.roll();
-});
-
-btnHold.addEventListener('click', () => {
-    activePlayer === 1 ? player1.holdScore() : player2.holdScore();
-});
-
-
-// Menu Buttons
-// New Game
-document.querySelectorAll('.restart').forEach((button) => {
-    button.addEventListener('click', () => window.location.reload());
-});
-
-/* Modal */
-const modal = document.querySelector('.modal');
-const overlay = document.querySelector('.overlay');
-const btnCloseModal = document.querySelector('.exit');
-const btnsOpenModal = document.querySelectorAll('.btn--menu');
-const info = document.querySelector('.info');
-
-const openModal = function () {
-    modal.classList.remove('hidden');
-    overlay.classList.remove('hidden');
-};
-
-const closeModal = function () {
-    modal.classList.add('hidden');
-    overlay.classList.add('hidden');
-};
-
-for (let i = 0; i < btnsOpenModal.length; i++)
-    btnsOpenModal[i].addEventListener('click', openModal);
-
-btnCloseModal.addEventListener('click', closeModal);
-overlay.addEventListener('click', closeModal);
-
-document.addEventListener('keydown', function (e) {
-    // console.log(e.key);
-
-    if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
-        closeModal();
-    }
-});
-
 const characterScreen = (function () {
     const contPlayerOne = document.getElementById('container--p1');
     const contPlayerTwo = document.getElementById('container--p2');
@@ -322,54 +125,42 @@ const characterScreen = (function () {
         if (e.target.id === 'char--ryu') {
             if (e.target.className === 'active--1') {
                 characterScreen.selectButton('ryu', '1P', 'red');
-                player1.updateCharacter('ryu', '1P');
             } else {
                 characterScreen.selectButton('ryu', '2P', 'blue');
-                player2.updateCharacter('ryu', '2P');
                 setTimeout(loadScreen, 3500);
             }
         } else if (e.target.id === 'char--chun') {
             if (e.target.className === 'active--1') {
-                player1.updateCharacter('chun', '1P');
                 characterScreen.selectButton('chun', '1P', 'red');
             } else {
-                player2.updateCharacter('chun', '2P');
                 characterScreen.selectButton('chun', '2P', 'blue');
                 setTimeout(loadScreen, 3500);
             }
         } else if (e.target.id === 'char--ken') {
             if (e.target.className === 'active--1') {
-                player1.updateCharacter('ken', '1P');
                 characterScreen.selectButton('ken', '1P', 'red');
             } else {
-                player2.updateCharacter('ken', '2P');
                 characterScreen.selectButton('ken', '2P', 'blue');
                 setTimeout(loadScreen, 3500);
             }
         } else if (e.target.id === 'char--akuma') {
             if (e.target.className === 'active--1') {
-                player1.updateCharacter('akuma', '1P');
                 characterScreen.selectButton('akuma', '1P', 'red');
             } else {
-                player2.updateCharacter('akuma', '2P');
                 characterScreen.selectButton('akuma', '2P', 'blue');
                 setTimeout(loadScreen, 3500);
             }
         } else if (e.target.id === 'char--sakura') {
             if (e.target.className === 'active--1') {
-                player1.updateCharacter('sakura', '1P');
                 characterScreen.selectButton('sakura', '1P', 'red');
             } else {
-                player2.updateCharacter('sakura', '2P');
                 characterScreen.selectButton('sakura', '2P', 'blue');
                 setTimeout(loadScreen, 3500);
             }
         } else if (e.target.id === 'char--dan') {
             if (e.target.className === 'active--1') {
-                player1.updateCharacter('dan', '1P');
                 characterScreen.selectButton('dan', '1P', 'red');
             } else {
-                player2.updateCharacter('dan', '2P');
                 characterScreen.selectButton('dan', '2P', 'blue');
                 setTimeout(loadScreen, 3500);
             }
@@ -377,17 +168,6 @@ const characterScreen = (function () {
         selectButtons.forEach((button) => {
             button.classList = 'active--2';
         })
-    }
-
-    const pages = document.querySelectorAll(".page");
-    const translateAmount = 100;
-    let translate = 0;
-    const slide = () => {
-        let direction = 'next';
-        direction === "next" ? translate -= translateAmount : translate += translateAmount;
-        pages.forEach(
-            pages => (pages.style.transform = `translateX(${translate}%)`)
-        );
     }
 
     const loadScreen = function() {
@@ -406,17 +186,18 @@ const characterScreen = (function () {
                     elem.innerHTML = width  + "%";
                     if (width === 100) {
                         loading.textContent = 'COMPLETE';
-                        setTimeout(slide,4000);
                     }
                 }
             }
         }
     }
 
-    return {updateDisplay, selectPlayer, selectButton, changeImage, updateName, loadScreen, slide}
+    return {updateDisplay, selectPlayer, selectButton, changeImage, updateName, loadScreen}
 })();
 
 
 const selectContainer = document.getElementById('player-select');
 selectContainer.addEventListener('mouseover', characterScreen.updateDisplay);
 selectContainer.addEventListener('click', characterScreen.selectPlayer);
+
+
